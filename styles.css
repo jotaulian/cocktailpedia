@@ -5,6 +5,7 @@ Fonts
 */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
 /*
 =============== 
@@ -44,8 +45,8 @@ Variables
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-black: #222;
-  --ff-primary: "Philosopher", sans-serif;
-  --ff-secondary: "Roboto", sans-serif;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Anton", sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
@@ -101,7 +102,7 @@ h4 {
   font-family: var(--ff-primary);
 }
 h1 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 h2 {
   font-size: 2rem;
@@ -121,7 +122,7 @@ ul {
 }
 @media screen and (min-width: 800px) {
   h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
   h2 {
     font-size: 2.5rem;
@@ -171,12 +172,44 @@ ul {
   background: var(--clr-white);
   box-shadow: 0 1px 20px rgba(92, 92, 92, 0.972);
 }
+
+/* HEADER */
+header {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(./pexels-loe-moshkovska-700975.jpg) center/cover;
+  height: 100vh;
+}
+.banner {
+  width: 70vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.banner h1 {
+  font-family: var(--ff-secondary);
+  font-size: 2rem;
+  text-align: center;
+  background: rgba(20, 20, 20, 0.795);
+  padding: 2rem;
+}
 /* section */
 .section {
   padding: 5rem 0;
   background: transparent;
 }
-
+.titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-top: 1rem;
+}
+.titulo h1 {
+  align-self: center;
+  margin: 0;
+  margin-right: 1rem;
+}
 .section-center {
   background: transparent;
   width: 85vw;
@@ -196,6 +229,21 @@ ul {
   .section-center {
     width: 90vw;
   }
+
+  .banner {
+    width: 70vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .banner h1 {
+    font-family: var(--ff-secondary);
+    font-size: 6rem;
+    text-align: center;
+    background: rgba(20, 20, 20, 0.795);
+    padding: 2rem;
+  }
 }
 /* loading */
 .loading {
@@ -208,20 +256,15 @@ ul {
   width: 100%;
   height: 100%;
   background: linear-gradient(
-    45deg,
-    rgba(69, 72, 77, 1) 0%,
-    rgba(0, 0, 0, 1) 100%
-  );
+      45deg,
+      rgba(69, 72, 77, 1) 0%,
+      rgba(0, 0, 0, 1) 100%
+    )
+    fixed;
   padding-top: 5rem;
   z-index: 999;
 }
-.loading iframe {
-  width: 240px;
-  height: 175px;
-  border-radius: 30%;
-  box-shadow: -10px 0px 100px black, 0px 0px 100px black;
-  background: black;
-}
+
 .hide-loading {
   display: none;
 }
@@ -235,7 +278,9 @@ ul {
   margin: 0 auto;
   outline: none;
 }
-
+.search-form h4 {
+  font-family: var(--ff-primary);
+}
 input {
   font-family: var(--ff-secondary);
   width: 100%;
@@ -271,6 +316,9 @@ input::placeholder {
   transition: var(--transition);
   margin-bottom: 3rem;
   position: relative;
+}
+.pink {
+  color: rgb(102, 37, 119);
 }
 .cocktail:hover {
   box-shadow: var(--dark-shadow);
@@ -346,7 +394,10 @@ input::placeholder {
 .drink-info {
   padding-top: 2rem;
 }
-
+.drink-ingredients,
+.q {
+  font-family: var(--ff-primary);
+}
 .drink-ingredients .far {
   margin-right: 1rem;
 }
@@ -359,10 +410,6 @@ input::placeholder {
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
-.titulo {
-  text-align: center;
-  margin-top: 3rem;
 }
 .footer {
   text-align: end;
